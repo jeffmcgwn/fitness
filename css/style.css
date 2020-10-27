@@ -1,0 +1,30 @@
+#smscale {
+    background-image: url('../img/fcbg.jpg');
+    background-size: cover;
+    color: darkslategray;
+}
+
+#scale {
+    background-image: url('../img/fcbgdark.jpg');
+    background-size: cover;
+    position: static;
+    color: grey;
+}
+
+.bg-blk {}
+
+@media only screen and (max-width: 768px) {
+    /* For mobile phones: */
+    #fcalc {
+        width: 80%;
+        height: 80%;
+    }
+}
+
+@media only screen and (max-width: 400px) {
+    /* For mobile phones: */
+    #fcalc {
+        width: 90%;
+        height: 90%;
+    }
+}

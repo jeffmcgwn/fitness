@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+    <!-- Google Fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Material Design Bootstrap -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.14.1/css/mdb.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="fatman.ico" type="image">
+    <title>Fitness Calculator</title>
+
+    <style>
+        #loading,
+        #results,
+        #fat {
+            display: none;
+        }
+    </style>
+
+</head>
+
+<body class="bg-blk" id="scale">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 mx-auto">
+                <div class="card card-body text-center mt-3" width="100%" id="smscale">
+                    <div class="animated slideInLeft">
+                        <img class="heading display-5 pb-3" id="fcalc" src="img/fc.png" width="60%" height="60%">
+                    </div>
+                    <div class="animated slideInRight">
+                        <form id="bmi-form">
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <input type="number" class="form-control mr-sm-2" id="weight" placeholder="Weight (lbs)">
+                                    <input type="number" class="form-control mr-sm-2" id="age" placeholder="Age">
+
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <input type="number" class="form-control mr-sm-2" id="feet" placeholder="Feet">
+
+                                    <input type="number" class="form-control mr-sm-2" id="inches" placeholder="Inches">
+
+
+
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+
+                                <div class="input-group">
+
+
+                                    <select class="custom-select mr-sm-2" id="activity">
+                                      <option selected value="0">Activity Level...</option>
+                                      <option value="1">Sedentary (Not Active)</option>
+                                      <option value="2">Lightly Active</option>
+                                      <option value="3">Moderately Active</option>
+                                      <option value="4">Very Active</option>
+                                      <option value="5">Extra Active</option>
+                                </select>
+
+
+
+                                    <select class="custom-select mr-sm-2" id="sex">
+                                      <option selected>Sex...</option>
+                                      <option value="male">Male</option>
+                                      <option value="female">Female</option>
+                                </select>
+
+
+
+                                </div>
+
+
+                                <div class="form-group">
+                                    <input type="submit" value="Calculate" class="btn btn-blue btn-block" width="25%">
+                                </div>
+                            </div>
+
+                        </form>
+                    </div>
+                    <!--LOADER-->
+
+                    <div id="loading">
+                        <img src="img/goodspin.gif" height="15%" width="15%" alt="">
+                    </div>
+
+                    <!--RESULTS-->
+                    <div class="container">
+                        <div id="results" class="pt-4" id="bgblk">
+                            <h2><strong>RESULTS</strong></h2>
+
+
+
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <br>
+
+
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div id="fat" class="container-fluid" id="bgblk">
+
+                        <div class="row">
+                            <div class="col-lg">
+                                <div id="fatpic">
+                                    <img class='animated slideInLeft' src='img/fat.png'>
+                                </div>
+                            </div>
+                            <div class="col-sm">
+                                <h3 class="animated slideInLeft"><strong>BMI</strong></h3>
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <br>
+                                        <input type="number" class="form-control" id="bmi" style="text-align:center;" size="8" disabled>
+                                    </div>
+                                </div>
+                                <h3 class="animated slideInRight"><strong>Your Status</strong></h3>
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" id="status" style="text-align:center;" style="width:300px;" size="8" disabled>
+                                    </div>
+                                </div>
+                                <br>
+                                <h3 class="animated slideInLeft"><strong>Target Daily Caloric Intake</strong></h3>
+                                <label for="loss"><strong>To lose weight (1 lb/week)</strong></label>
+                                <input type="number" class="form-control" id="loss" style="text-align:center;" size="4" disabled>
+
+
+                                <label for="loss"><strong>Weight Maintenance</strong></label>
+                                <input type="number" class="form-control" id="maintain" style="text-align:center;" size="4" disabled>
+
+
+                                <label for="loss"><strong>To gain weight (1 lb/week)</strong></label>
+                                <input type="number" class="form-control" id="gain" style="text-align:center;" size="4" disabled>
+
+
+                            </div>
+                        </div>
+                        <br>
+                        <h2 class="animated fadeIn"><strong>My Advice</strong></h2>
+
+                        <p id="advice"></p>
+                        <h6 class="animated fadeIn"><u><strong>Helpful Resources</strong></u></h6>
+
+                        <p id="resources"></p>
+                    </div>
+
+
+                    <!--RESULTS-->
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="app.js"></script>
+</body>
+
+</html>
